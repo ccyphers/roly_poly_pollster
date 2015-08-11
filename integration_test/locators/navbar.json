@@ -1,0 +1,10 @@
+{
+  "home": {
+    "locator": "a[href='/']",
+    "type": "css"
+  },
+  "create": {
+    "locator": "a[href='#new']",
+    "type": "css"
+  }
+}

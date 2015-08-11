@@ -1,0 +1,78 @@
+doctype html
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" xml:lang="en" lang="en"> <!--<![endif]-->
+
+head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+
+
+    meta(name="mobile-web-app-capable", content="yes")
+    link(rel="icon", sizes="192x192", href="images/touch/chrome-touch-icon-192x192.png")
+
+    meta(name="apple-mobile-web-app-capable", content="yes")
+    meta(name="apple-mobile-web-app-status-bar-style", content="black")
+    meta(name="apple-mobile-web-app-title", content="Material Design Lite")
+    link(rel="apple-touch-icon-precomposed", href="apple-touch-icon-precomposed.png")
+
+    meta(name="msapplication-TileImage", content="images/touch/ms-touch-icon-144x144-precomposed.png")
+    meta(name="msapplication-TileColor", content="#3372DF")
+
+
+    meta(name="description", content="")
+    link(href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en", rel="stylesheet")
+    link(href="https://fonts.googleapis.com/icon?family=Material+Icons", rel="stylesheet")
+    link(rel="stylesheet", href="bower_components/bootstrap/dist/css/bootstrap.min.css")
+
+    link(rel="stylesheet", href="bower_components/material-design-lite/material.min.css")
+    link(rel="stylesheet", href="bower_components/morris.js/morris.css")
+    link(rel="stylesheet", href="css/app.css")
+
+body(class="mdl-color--grey-100 mdl-color-text--grey-700 mdl-base")
+
+
+
+    div(class="mdl-layout mdl-js-layout mdl-layout--fixed-header")
+        header(class="mdl-layout__header")
+            div(class="mdl-layout__header-row")
+                span(class="mdl-layout-title")
+                    | Pollster - Getting the Job Done
+                div(class="mdl-layout-spacer")
+                nav(class="mdl-navigation mdl-layout--large-screen-only")
+                    a(class="mdl-navigation__link", href="/pollster")
+                        | Home
+                    a(class="mdl-navigation__link", href="#new")
+                        | Create Poll
+
+                //div(class="icon material-icons mdl-badge hidden", data-badge="") account_box
+                //div(class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right")
+                    label(class="mdl-button mdl-js-button mdl-button--icon", for="fixed-header-drawer-exp2")
+                        i(class="material-icons")
+                            | search
+                    div(class="mdl-textfield__expandable-holder")
+                        input(class="mdl-textfield__input", type="text", name="sample", id="fixed-header-drawer-exp2")
+
+
+        div(class="mdl-layout__drawer")
+            span(class="mdl-layout-title")
+                | Pollster - Getting the Job Done
+            nav(class="mdl-navigation")
+                a(class="mdl-navigation__link", href="/pollster")
+                    | Home
+                a(class="mdl-navigation__link", href="#new")
+                    | Create Poll
+
+
+        main(class="mdl-layout__content")
+            div(class="page-content", id="ui_container")
+
+
+    script(data-main="js/main.1439305321", src="js/libs/require/require.js")
+
+
+
+

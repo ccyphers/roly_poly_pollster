@@ -1,0 +1,38 @@
+{
+  "name": {
+    "locator": "input#name",
+    "type": "css"
+  },
+  "name_error": {
+    "locator": "span#name_error",
+    "type": "css"
+  },
+  "question_1": {
+    "locator": "input#question_1",
+    "type": "css"
+  },
+  "question_1_error": {
+    "locator": "span#question_error_1",
+    "type": "css"
+  },
+  "question_2": {
+    "locator": "input#question_2",
+    "type": "css"
+  },
+  "question_3": {
+    "locator": "input#question_3",
+    "type": "css"
+  },
+  "question_4": {
+    "locator": "input#question_4",
+    "type": "css"
+  },
+  "question_5": {
+    "locator": "input#question_5",
+    "type": "css"
+  },
+  "save": {
+    "locator": "button#save_poll",
+    "type": "css"
+  }
+}

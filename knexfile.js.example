@@ -1,0 +1,48 @@
+module.exports = {
+
+  test: {
+    client: 'pg',
+    connection: {
+      host: '127.0.0.1',
+      user: 'updateme',
+      password: 'updateme',
+      database: 'poller_test'
+    },
+    migrations: {
+      tableName: 'knex_migrations'
+    }
+  },
+
+  development: {
+    client: 'pg',
+    connection: {
+      host: '127.0.0.1',
+      user: 'updateme',
+      password: 'updateme',
+      database: 'poller_development'
+    },
+    migrations: {
+      tableName: 'knex_migrations'
+    }
+  },
+
+  production: {
+    client: 'pg',
+    connection: {
+      host: '127.0.0.1',
+      port: 5433,
+      user: 'updateme',
+      password: 'updateme',
+      database: 'poller_production'
+    },
+
+    pool: {
+      min: 2,
+      max: 10
+    },
+    migrations: {
+      tableName: 'knex_migrations'
+    }
+  }
+
+};

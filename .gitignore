@@ -1,0 +1,6 @@
+knexfile.js.prod
+knexfile.js
+node_modules
+ui/bower_components
+.idea
+

@@ -1,0 +1,12 @@
+<% if(!hidden) { %>
+<div class="" id="question_container_<%= question_number %>">
+<% } else { %>
+    <div class="hidden" id="question_container_<%= question_number %>">
+<% } %>
+  <div class="mdl-textfield mdl-js-textfield textfield-new-poll">
+    <input data-new-poll-question data-check class="mdl-textfield__input", type="text" data-id="<%= question_number %>" id="question_<%= question_number %>">
+    <label class="mdl-textfield__label", for="question_<%= question_number %>">What do you want to ask?</label>
+    <span data-questions id="question_error_<%= question_number %>" class="mdl-textfield__error"></span>
+ </div>
+</div>
+

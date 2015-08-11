@@ -1,0 +1,14 @@
+.new-poll-card,
+.textfield-new-poll {
+  width: 100%;
+}
+ul li.styless {
+  list-style: none;
+}
+/*@import "_mdl";*/
+.icon-right {
+  float: right;
+}
+form > fieldset > label {
+  margin-left: 20px;
+}

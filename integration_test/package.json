@@ -1,0 +1,20 @@
+{
+  "name": "roly_poly_poller_int_test",
+  "version": "0.0.1",
+  "description": "Integration test cases for employment sample application",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "nemo": "^1.0.6",
+    "nemo-view": "^1.2.0",
+    "chromedriver": "^2.16.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "AGPL-3"
+}

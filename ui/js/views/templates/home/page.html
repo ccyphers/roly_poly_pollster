@@ -1,0 +1,35 @@
+<div class="demo-grid-ruler mdl-grid">
+
+    <% for(var x = 0; x < polls.length; x++) { %>
+
+        <div class="mdl-cell mdl-cell--4-col">
+
+            <div class="mdl-card mdl-shadow--2dp demo-card-square">
+                <div class="mdl-card__title">
+                    <h2 class="mdl-card__title-text"><%= polls[x].name %></h2>
+                </div>
+
+                <div class="mdl-card__supporting-text">
+                    <ul>
+                        <% for(var key in polls[x].questions) { %>
+
+                            <li><%= polls[x].questions[key] %></li>
+                        <% } %>
+                    </ul>
+                </div>
+
+                <div class="mdl-card__actions mdl-card--border">
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" data-id="<%= polls[x].id %>" id="take_poll">
+                        Poll Details(Take and view results)
+                    </button>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    <% } %>
+
+</div>

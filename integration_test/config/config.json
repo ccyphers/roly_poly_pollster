@@ -1,0 +1,22 @@
+{
+  "driver": {
+    "browser": "config:BROWSER"
+  },
+  "data": {
+    "base_url": "http://localhost:3000"
+  },
+  "BROWSER": "chrome",
+  "plugins": {
+    "view": {
+      "module": "nemo-view",
+      "arguments": ["path:locators"]
+    },
+    "flows": {
+      "module": "path:plugins/flows"
+    },
+    "knex": {
+      "module": "path:plugins/knex"
+    }
+
+  }
+}

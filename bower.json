@@ -1,0 +1,11 @@
+{
+  "name": "roly_poly_pollster",
+  "main": "index.js",
+  "version": "0.0.0",
+  "license": "AGPL",
+  "dependencies": {
+    "material-design-lite": "~1.0.0",
+    "morris.js": "~0.5.1",
+    "bootstrap": "~3.3.5"
+  }
+}

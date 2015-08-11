@@ -1,0 +1,53 @@
+<div class="demo-grid-ruler mdl-grid">
+
+    <div class="mdl-cell mdl-cell--4-col">
+
+        <div class="mdl-card mdl-shadow--2dp demo-card-square">
+            <div class="mdl-card__title">
+                <h2 class="mdl-card__title-text"><%= poll.name %></h2>
+            </div>
+
+
+            <div class="alert alert-warning hidden" id="alert_warning">
+                <i id="clear_warnings" class="material-icons md-icon dp48 icon-right">clear</i>
+                <ul id="new_poll_alerts_warning"></ul>
+            </div>
+
+
+            <div class="mdl-card__supporting-text">
+                <form>
+                    <fieldset>
+                        <% for(var key in poll.questions) { %>
+                        <label class="checkbox">
+                            <input id="select_choice" data-question-number="<%= key %>" type="checkbox"> <%=
+                            poll.questions[key] %>
+                        </label>
+
+                        <% } %>
+                    </fieldset>
+                </form>
+
+            </div>
+
+            <div class="mdl-card__actions mdl-card--border">
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
+                        data-id="<%= poll.id %>" id="answer_poll">
+                    Submit
+                </button>
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
+                        data-id="<%= poll.id %>" id="poll_results">
+                    View Results
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="poll_results" class="mdl-cell mdl-cell--8-col">
+        <div id="chart"></div>
+    </div>
+
+
+</div>
