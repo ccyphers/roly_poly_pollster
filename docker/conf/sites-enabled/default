@@ -13,7 +13,7 @@
 # Default server configuration
 #
 server {
-	listen 8080 default_server;
+	listen 80 default_server;
 #	listen [::]:8080 default_server;
 
         root /var/www;
@@ -28,7 +28,7 @@ server {
           passenger_enabled on;
 	}
 
-	location /pollster {
+	location /pollster/ {
 		try_files $uri $uri/ =404;
         }
 }

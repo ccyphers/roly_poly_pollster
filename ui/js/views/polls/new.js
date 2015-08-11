@@ -114,7 +114,7 @@ define([
                     data: poll,
                     dataType: 'json',
                     success: function(res) {
-                        location.href='/pollster';
+                        location.href='/pollster/';
                     }
 
                 })
