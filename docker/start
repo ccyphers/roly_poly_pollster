@@ -1,0 +1,8 @@
+docker stop pollster_web
+docker stop pollster_db
+docker rm -f pollster_db
+docker rm -f pollster_web
+docker run -d --volumes-from pollster_db_data --name pollster_db pollster_db
+sleep 2
+docker run -d --name pollster_web --link pollster_db:pollster_db pollster_web
+
