@@ -4,14 +4,13 @@ module.exports = function (nemo) {
     this.nemo = nemo;
 
     this.ensure_on_create_page = function() {
-        var deferred = Promise.defer()
-            , self = this;
+        var self = this;
 
-        this.nemo.driver.getCurrentUrl()
+        return this.nemo.driver.getCurrentUrl()
             .then(function(res) {
 
                 if(res == self.nemo.data.base_url + '/#new') {
-                    deferred.resolve(true)
+                    return Promise.resolve(true)
                 } else {
                     self.nemo.driver.get(nemo.data.base_url);
 
@@ -19,28 +18,24 @@ module.exports = function (nemo) {
                     self.nemo.view.navbar.create().click();
                     self.nemo.view.create_poll.saveWaitVisible()
                         .then(function() {
-                            deferred.resolve(true)
+                            return Promise.resolve(true)
                         }, function(err) {
-                            deferred.reject(err)
+                            return Promise.resolve(false)
                         })
                 }
 
             }, function(err) {
-                deferred.reject(err);
+                return Promise.reject(err);
             });
-
-        return deferred.promise;
     };
 
     this.run = function (options) {
-        var deferred = Promise.defer()
-            , self= this
-            , promise;
+        var self= this;
 
         options = options || {};
         options.questions = options.questions || [];
 
-        this.ensure_on_create_page()
+        return this.ensure_on_create_page()
             .then(function(res) {
                 if (options.name) {
                     promise = self.nemo.view.create_poll.name().sendKeys(options.name);
@@ -56,20 +51,18 @@ module.exports = function (nemo) {
 
 
                 if(promise) {
-                    promise
+                    return promise
                         .then(function(res) {
-                            deferred.resolve(res);
+                            return Promise.resolve(res);
                         }, function(err) {
-                            deferred.reject(err);
+                            return Promise.reject(err);
                         })
 
                 } else {
-                    deferred.resolve(true)
+                    return Promise.resolve(true)
                 }
 
             });
-
-        return deferred.promise;
 
     }
 

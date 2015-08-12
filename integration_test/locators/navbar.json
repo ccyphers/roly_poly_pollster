@@ -1,6 +1,6 @@
 {
   "home": {
-    "locator": "a[href='/']",
+    "locator": "a[href='/pollster/']",
     "type": "css"
   },
   "create": {

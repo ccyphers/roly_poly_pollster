@@ -34,6 +34,7 @@ describe("Create Poll", function () {
 
         nemo.flows.create_poll.run(options)
             .then(function() {
+                debugger
                 nemo.view.navbar.homeWaitVisible()
                     .then(function() {
 
