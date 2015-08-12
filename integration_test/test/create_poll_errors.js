@@ -34,15 +34,15 @@ describe("Create Poll", function () {
 
         nemo.flows.create_poll.run(options)
             .then(function () {
+                return nemo.view.create_poll.name_error().getText();
+            })
+            .then(function (o) {
+                assert(o == "Name can't be blank");
+                done()
+            }, function (err) {
+                assert(false);
+                done()
 
-                nemo.view.create_poll.name_error().getText()
-                    .then(function (o) {
-                        assert(o == "Name can't be blank");
-                        done()
-                    }, function (err) {
-                        assert(false);
-                        done()
-                    });
             })
 
     });
@@ -55,26 +55,18 @@ describe("Create Poll", function () {
 
         nemo.flows.create_poll.run(options)
             .then(function () {
-                nemo.flows.create_poll.run({name: 'should clear error', save: true})
-                    .then(function () {
-                        nemo.view.create_poll.name_error().getText()
-                            .then(function (o) {
-                                assert(o == "");
-                                done();
-
-                            }, function () {
-                                assert(false);
-                                done();
-                            });
-                    }, function (err) {
-                        assert(false);
-                        done();
-                    });
+                return nemo.flows.create_poll.run({name: 'should clear error', save: true});
+            })
+            .then(function () {
+                return nemo.view.create_poll.name_error().getText();
+            })
+            .then(function (o) {
+                assert(o == "");
+                done();
             }, function () {
                 assert(false);
                 done();
-            })
-
+            });
 
     });
 
@@ -87,32 +79,23 @@ describe("Create Poll", function () {
 
         nemo.flows.create_poll.run(options)
             .then(function () {
+                return nemo.view.create_poll.name_error().getText();
+            })
+            .then(function (o) {
+                // verify there's no error for name
+                assert(o == "");
 
-                nemo.view.create_poll.name_error().getText()
-                    .then(function (o) {
-
-                        // verify there's no error for name
-                        assert(o == "");
-
-                        // verify there's an error for at least one question
-                        nemo.view.create_poll.question_1_error().getText()
-                            .then(function (o) {
-                                assert("At least one question has to be asked" == o);
-                                done()
-                            }, function (err) {
-                                assert(false);
-                                done()
-                            })
-
-                    }, function (err) {
-                        assert(false);
-                        done()
-                    })
-
+                // verify there's an error for at least one question
+                return nemo.view.create_poll.question_1_error().getText();
+            })
+            .then(function (o) {
+                assert("At least one question has to be asked" == o);
+                done()
             }, function (err) {
                 assert(false);
                 done()
             })
+
     });
 
 });
